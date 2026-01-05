@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You - Food Time</title>
+  <link rel="stylesheet" href="Style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <a href="index.html" class="logo">Food Time</a>
+      <div class="navbar">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Menu</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+      </div>
+      <a href="cart.html">
+        <i class='bx bx-shopping-bag' id="cart-icon" data-quantity="0"></i>
+      </a>
+    </div>
+  </header>
+
+  <section class="thankyou container">
+    <div class="thankyou-content">
+      <i class='bx bx-check-circle success-icon'></i>
+      <h2 class="heading">THANK YOU!</h2>
+      <p class="message">Your order has been placed successfully.</p>
+      <p class="order-info">We'll send you a confirmation email shortly.</p>
+      <div class="button-group">
+        <a href="index.html" class="continue-shopping">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Display order details if available
+      const lastOrder = JSON.parse(localStorage.getItem("lastOrder"));
+      if (lastOrder) {
+        const orderInfo = document.querySelector('.order-info');
+        orderInfo.innerHTML = `
+          <p>Order Details:</p>
+          <p><strong>Customer:</strong> ${lastOrder.customer.name}</p>
+          <p><strong>Total:</strong> ${lastOrder.total}</p>
+          <p><strong>Payment Method:</strong> ${lastOrder.customer.payment}</p>
+          <p>We'll send you a confirmation email shortly.</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Food Time</title>
+  <link rel="stylesheet" href="Style.css" />
+  <!-- Box icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Nav -->
+    <div class="nav container">
+      <!-- Menu icon -->
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <!-- Logo -->
+      <a href="index.html" class="logo">Food Time</a>
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#menu" class="nav-link">Menu</a>
+        <a href="#" class="nav-link" onclick="showAboutModal()">About</a>
+        <a href="#" class="nav-link" onclick="showContactModal()">Contact</a>
+      </div>
+      <!-- Cart Icon -->
+      <a href="cart.html">
+        <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-container container">
+    <a href="index.html" class="back-homepage">
+      <i class="bx bx-chevron-left"></i>
+      <span>Back To Home</span>
+    </a>
+    <h2 class="cart-s-title">Shopping Cart</h2>
+    <div class="cart-box">
+      <div class="cart-data">
+        <div id="cartItems"></div>
+      </div>
+      <div class="cart-t">
+        <div id="cartTotal">Total: ₹0.00</div>
+        <a href="checkout.html" class="checkout-btn">Checkout</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+      <h2>About Food Time</h2>
+      <p>Welcome to Food Time, your premier destination for delicious food delivery! We bring you the finest selection of cuisines from around the world, right to your doorstep.</p>
+      <p>Our mission is to provide you with:</p>
+      <ul>
+        <li>Fresh, high-quality ingredients</li>
+        <li>Fast and reliable delivery</li>
+        <li>Diverse menu options</li>
+        <li>Excellent customer service</li>
+      </ul>
+      <p>Founded in 2024, Food Time has been serving thousands of satisfied customers with our commitment to quality and taste.</p>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('contactModal')">&times;</span>
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="bx bx-phone"></i>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="contact-item">
+          <i class="bx bx-envelope"></i>
+          <span>info@foodtime.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="bx bx-map"></i>
+          <span>123 Food Street, Cuisine City, CC 12345</span>
+        </div>
+        <div class="contact-item">
+          <i class="bx bx-time"></i>
+          <span>Open: 10:00 AM - 11:00 PM</span>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="social-link"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="social-link"><i class="bx bxl-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to JS -->
+  <script src="cart.js"></script>
+</body>
+</html> 
